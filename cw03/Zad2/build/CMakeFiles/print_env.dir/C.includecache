@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bkoniecz/CLionProjects/KoniecznyBartlomiej/cw03/Zad2/src/print-env.c
+stdio.h
+-
+stdlib.h
+-
+

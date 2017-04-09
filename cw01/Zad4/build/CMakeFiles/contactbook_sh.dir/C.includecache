@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/cbook.h
+
+/home/bkoniecz/CLionProjects/KoniecznyBartlomiej/cw01/Zad4/lib/cbook.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+cbook.h
+/home/bkoniecz/CLionProjects/KoniecznyBartlomiej/cw01/Zad4/lib/cbook.h
+

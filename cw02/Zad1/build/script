@@ -1,0 +1,2 @@
+#!/bin/bash
+./test > wyniki.txt 2>&1

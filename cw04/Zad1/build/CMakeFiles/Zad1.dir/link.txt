@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall -g -std=gnu99   CMakeFiles/Zad1.dir/src/main.c.o  -o Zad1 

@@ -1,0 +1,368 @@
+
+Operation: generate
+System: (null)
+Filename: file41
+Number of records: 1000
+Record size: 4
+
+Operation: generate
+System: (null)
+Filename: file42
+Number of records: 3000
+Record size: 4
+
+Operation: generate
+System: (null)
+Filename: file5121
+Number of records: 1000
+Record size: 512
+
+Operation: generate
+System: (null)
+Filename: file5122
+Number of records: 3000
+Record size: 512
+
+Operation: generate
+System: (null)
+Filename: file40961
+Number of records: 1000
+Record size: 4096
+
+Operation: generate
+System: (null)
+Filename: file40962
+Number of records: 2000
+Record size: 4096
+
+Operation: generate
+System: (null)
+Filename: file81921
+Number of records: 1000
+Record size: 8192
+
+Operation: generate
+System: (null)
+Filename: file81922
+Number of records: 2000
+Record size: 8192
+
+Operation: sort
+System: sys
+Filename: file41
+Number of records: 1000
+Record size: 4
+
+real	0m4.097s
+user	0m0.296s
+sys	0m3.744s
+
+Operation: sort
+System: lib
+Filename: file412
+Number of records: 1000
+Record size: 4
+
+real	0m3.383s
+user	0m0.764s
+sys	0m2.564s
+
+Operation: sort
+System: sys
+Filename: file42
+Number of records: 3000
+Record size: 4
+
+real	0m36.470s
+user	0m2.988s
+sys	0m33.128s
+
+Operation: sort
+System: lib
+Filename: file422
+Number of records: 3000
+Record size: 4
+
+real	0m30.216s
+user	0m6.624s
+sys	0m22.952s
+
+Operation: sort
+System: sys
+Filename: file5121
+Number of records: 1000
+Record size: 512
+
+real	0m4.362s
+user	0m0.340s
+sys	0m3.916s
+
+Operation: sort
+System: lib
+Filename: file51212
+Number of records: 1000
+Record size: 512
+
+real	0m4.248s
+user	0m1.060s
+sys	0m3.072s
+
+Operation: sort
+System: sys
+Filename: file5122
+Number of records: 3000
+Record size: 512
+
+real	0m40.808s
+user	0m3.800s
+sys	0m35.828s
+
+Operation: sort
+System: lib
+Filename: file51222
+Number of records: 3000
+Record size: 512
+
+real	0m38.138s
+user	0m8.736s
+sys	0m28.460s
+
+Operation: sort
+System: sys
+Filename: file40961
+Number of records: 1000
+Record size: 4096
+
+real	0m6.008s
+user	0m0.400s
+sys	0m5.440s
+
+Operation: sort
+System: lib
+Filename: file409612
+Number of records: 1000
+Record size: 4096
+
+real	0m7.423s
+user	0m1.344s
+sys	0m5.820s
+
+Operation: sort
+System: sys
+Filename: file40962
+Number of records: 2000
+Record size: 4096
+
+real	0m24.646s
+user	0m1.768s
+sys	0m22.096s
+
+Operation: sort
+System: lib
+Filename: file409622
+Number of records: 2000
+Record size: 4096
+
+real	0m29.857s
+user	0m4.956s
+sys	0m23.960s
+
+Operation: sort
+System: sys
+Filename: file81921
+Number of records: 1000
+Record size: 8192
+
+real	0m9.507s
+user	0m0.516s
+sys	0m8.692s
+
+Operation: sort
+System: lib
+Filename: file819212
+Number of records: 1000
+Record size: 8192
+
+real	0m11.546s
+user	0m1.244s
+sys	0m9.932s
+
+Operation: sort
+System: sys
+Filename: file81922
+Number of records: 2000
+Record size: 8192
+
+real	0m36.943s
+user	0m1.588s
+sys	0m34.180s
+
+Operation: sort
+System: lib
+Filename: file819222
+Number of records: 2000
+Record size: 8192
+
+real	0m45.936s
+user	0m5.284s
+sys	0m39.088s
+
+Operation: shuffle
+System: sys
+Filename: file41
+Number of records: 1000
+Record size: 4
+
+real	0m0.017s
+user	0m0.000s
+sys	0m0.012s
+
+Operation: shuffle
+System: lib
+Filename: file412
+Number of records: 1000
+Record size: 4
+
+real	0m0.023s
+user	0m0.012s
+sys	0m0.012s
+
+Operation: shuffle
+System: sys
+Filename: file42
+Number of records: 3000
+Record size: 4
+
+real	0m0.030s
+user	0m0.004s
+sys	0m0.024s
+
+Operation: shuffle
+System: lib
+Filename: file422
+Number of records: 3000
+Record size: 4
+
+real	0m0.070s
+user	0m0.004s
+sys	0m0.040s
+
+Operation: shuffle
+System: sys
+Filename: file5121
+Number of records: 1000
+Record size: 512
+
+real	0m0.011s
+user	0m0.000s
+sys	0m0.008s
+
+Operation: shuffle
+System: lib
+Filename: file51212
+Number of records: 1000
+Record size: 512
+
+real	0m0.029s
+user	0m0.008s
+sys	0m0.016s
+
+Operation: shuffle
+System: sys
+Filename: file5122
+Number of records: 3000
+Record size: 512
+
+real	0m0.090s
+user	0m0.000s
+sys	0m0.068s
+
+Operation: shuffle
+System: lib
+Filename: file51222
+Number of records: 3000
+Record size: 512
+
+real	0m0.055s
+user	0m0.016s
+sys	0m0.032s
+
+Operation: shuffle
+System: sys
+Filename: file40961
+Number of records: 1000
+Record size: 4096
+
+real	0m0.017s
+user	0m0.000s
+sys	0m0.020s
+
+Operation: shuffle
+System: lib
+Filename: file409612
+Number of records: 1000
+Record size: 4096
+
+real	0m0.019s
+user	0m0.004s
+sys	0m0.012s
+
+Operation: shuffle
+System: sys
+Filename: file40962
+Number of records: 2000
+Record size: 4096
+
+real	0m0.031s
+user	0m0.004s
+sys	0m0.024s
+
+Operation: shuffle
+System: lib
+Filename: file409622
+Number of records: 2000
+Record size: 4096
+
+real	0m0.058s
+user	0m0.008s
+sys	0m0.028s
+
+Operation: shuffle
+System: sys
+Filename: file81921
+Number of records: 1000
+Record size: 8192
+
+real	0m0.025s
+user	0m0.004s
+sys	0m0.016s
+
+Operation: shuffle
+System: lib
+Filename: file819212
+Number of records: 1000
+Record size: 8192
+
+real	0m0.026s
+user	0m0.004s
+sys	0m0.020s
+
+Operation: shuffle
+System: sys
+Filename: file81922
+Number of records: 2000
+Record size: 8192
+
+real	0m0.073s
+user	0m0.008s
+sys	0m0.040s
+
+Operation: shuffle
+System: lib
+Filename: file819222
+Number of records: 2000
+Record size: 8192
+
+real	0m0.052s
+user	0m0.000s
+sys	0m0.048s

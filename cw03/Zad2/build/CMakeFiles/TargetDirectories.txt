@@ -1,0 +1,5 @@
+/home/bkoniecz/CLionProjects/KoniecznyBartlomiej/cw03/Zad2/build/CMakeFiles/rebuild_cache.dir
+/home/bkoniecz/CLionProjects/KoniecznyBartlomiej/cw03/Zad2/build/CMakeFiles/Zad2.dir
+/home/bkoniecz/CLionProjects/KoniecznyBartlomiej/cw03/Zad2/build/CMakeFiles/print_env.dir
+/home/bkoniecz/CLionProjects/KoniecznyBartlomiej/cw03/Zad2/build/CMakeFiles/inf.dir
+/home/bkoniecz/CLionProjects/KoniecznyBartlomiej/cw03/Zad2/build/CMakeFiles/edit_cache.dir

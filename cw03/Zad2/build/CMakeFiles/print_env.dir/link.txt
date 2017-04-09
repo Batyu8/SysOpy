@@ -1,0 +1,1 @@
+/usr/bin/cc  -g -Wall -std=gnu99   CMakeFiles/print_env.dir/src/print-env.c.o  -o print_env -rdynamic 

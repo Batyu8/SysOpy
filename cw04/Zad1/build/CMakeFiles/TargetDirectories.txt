@@ -1,0 +1,3 @@
+/home/bkoniecz/CLionProjects/KoniecznyBartlomiej/cw04/Zad1/build/CMakeFiles/rebuild_cache.dir
+/home/bkoniecz/CLionProjects/KoniecznyBartlomiej/cw04/Zad1/build/CMakeFiles/edit_cache.dir
+/home/bkoniecz/CLionProjects/KoniecznyBartlomiej/cw04/Zad1/build/CMakeFiles/Zad1.dir

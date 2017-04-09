@@ -1,0 +1,1 @@
+/usr/bin/cc  -g -Wall -std=c99   CMakeFiles/Zad4.dir/src/main.c.o  -o Zad4 -Wl,-rpath,/home/bkoniecz/CLionProjects/KoniecznyBartlomiej/cw01/Zad4/build -rdynamic libcontactbook_sh.so 

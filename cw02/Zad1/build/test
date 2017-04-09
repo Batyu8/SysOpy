@@ -1,0 +1,51 @@
+#!/bin/bash
+./Zad1 generate file41 1000 4
+cp file41 file412
+./Zad1 generate file42 3000 4
+cp file42 file422
+./Zad1 generate file5121 1000 512
+cp file5121 file51212
+./Zad1 generate file5122 3000 512
+cp file5122 file51222
+./Zad1 generate file40961 1000 4096
+cp file40961 file409612
+./Zad1 generate file40962 2000 4096
+cp file40962 file409622
+./Zad1 generate file81921 1000 8192
+cp file81921 file819212
+./Zad1 generate file81922 2000 8192
+cp file81922 file819222
+
+time ./Zad1 sort sys file41 1000 4 
+time ./Zad1 sort lib file412 1000 4
+time ./Zad1 sort sys file42 3000 4
+time ./Zad1 sort lib file422 3000 4
+time ./Zad1 sort sys file5121 1000 512
+time ./Zad1 sort lib file51212 1000 512
+time ./Zad1 sort sys file5122 3000 512
+time ./Zad1 sort lib file51222 3000 512
+time ./Zad1 sort sys file40961 1000 4096
+time ./Zad1 sort lib file409612 1000 4096
+time ./Zad1 sort sys file40962 2000 4096
+time ./Zad1 sort lib file409622 2000 4096
+time ./Zad1 sort sys file81921 1000 8192
+time ./Zad1 sort lib file819212 1000 8192
+time ./Zad1 sort sys file81922 2000 8192
+time ./Zad1 sort lib file819222 2000 8192
+
+time ./Zad1 shuffle sys file41 1000 4
+time ./Zad1 shuffle lib file412 1000 4
+time ./Zad1 shuffle sys file42 3000 4
+time ./Zad1 shuffle lib file422 3000 4
+time ./Zad1 shuffle sys file5121 1000 512
+time ./Zad1 shuffle lib file51212 1000 512
+time ./Zad1 shuffle sys file5122 3000 512
+time ./Zad1 shuffle lib file51222 3000 512
+time ./Zad1 shuffle sys file40961 1000 4096
+time ./Zad1 shuffle lib file409612 1000 4096
+time ./Zad1 shuffle sys file40962 2000 4096
+time ./Zad1 shuffle lib file409622 2000 4096
+time ./Zad1 shuffle sys file81921 1000 8192
+time ./Zad1 shuffle lib file819212 1000 8192
+time ./Zad1 shuffle sys file81922 2000 8192
+time ./Zad1 shuffle lib file819222 2000 8192

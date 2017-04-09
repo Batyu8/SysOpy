@@ -1,0 +1,1 @@
+/usr/bin/cc  -g -Wall -std=gnu99 -g   CMakeFiles/Zad2.dir/src/main.c.o  -o Zad2 -rdynamic 

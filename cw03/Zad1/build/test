@@ -1,0 +1,8 @@
+#SUBJECT SysOpy
+#GRADE 5
+ls -l
+pwd
+cmake
+./print_env PATH
+#ME AWESOME
+./print_env ME

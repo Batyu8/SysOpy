@@ -1,0 +1,1 @@
+/usr/bin/cc  -fPIC -g -Wall -std=c99  -shared -Wl,-soname,libcontactbook_sh.so -o libcontactbook_sh.so CMakeFiles/contactbook_sh.dir/lib/cbook.c.o 

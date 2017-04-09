@@ -1,0 +1,10 @@
+1. Błąd występuje w linijce nr 254, gdzie drugi raz występuje instrukcja usunięcia listy
+2. Uruchamiamy gdb z argumentami ./Zad4sh ./core.
+3. Po wpisaniu bt i zatwierdzeniu enterem otrzymujemy obraz stosu podczas wystąpienia błędu
+
+#0  0x00007faf71548616 in delete_list (list=0xf8e460)
+    at /home/bkoniecz/CLionProjects/cw00/Zad4/lib/cbook.c:172
+#1  0x0000000000401cdd in test () at /home/bkoniecz/CLionProjects/cw00/Zad4/src/main.c:254
+#2  0x0000000000401d11 in main () at /home/bkoniecz/CLionProjects/cw00/Zad4/src/main.c:260
+
+4. Jak widać na obrazie stosu ostatnim wywołaniem jest delete_list z linii 254 programu.
