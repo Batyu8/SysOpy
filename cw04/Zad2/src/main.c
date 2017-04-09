@@ -91,13 +91,13 @@ int main(int argc, char **argv) {
             srand(i);
             int sleep_time = rand()%11;
             pid_t pid = getpid();
-            printf("Children with pid: %i is going to sleep for: %i seconds\n",pid,sleep_time);
+            printf("Child with pid: %i is going to sleep for: %i seconds\n",pid,sleep_time);
             sleep(sleep_time);
             pid_t ppid = getppid();
             union sigval rt;
             rt.sival_int = 0;
             time_t start = time(NULL);
-
+            printf("Child with pid: %i is sending signal SIGUSR1\n",pid);
             kill(ppid,SIGUSR1);
             pause();
             printf("Child eith pid: %i unpaused\n",pid);
