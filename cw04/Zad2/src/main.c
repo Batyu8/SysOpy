@@ -124,6 +124,7 @@ int main(int argc, char **argv) {
         kill(pids[i],SIGCONT);
     }
 
+    printf("Waiting for children to terminate\n");
     while(children_terminated < children){
         pause();
     }
