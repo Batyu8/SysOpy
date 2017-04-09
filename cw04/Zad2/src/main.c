@@ -77,6 +77,7 @@ int main(int argc, char **argv) {
     struct sigaction rt_sa;
     sa.sa_sigaction = SIGRT_handler;
     sa.sa_flags = SA_SIGINFO;
+
     for(int i=SIGRTMIN;i<=SIGRTMAX;i++){
         sigaction(i,&rt_sa,NULL);
     }
@@ -99,8 +100,10 @@ int main(int argc, char **argv) {
 
             kill(ppid,SIGUSR1);
             pause();
-            printf("Child %i unpaused\n",pid);
-            kill(ppid,rand()%(SIGRTMAX-SIGRTMIN+1)+SIGRTMIN);
+            printf("Child eith pid: %i unpaused\n",pid);
+            int rtsig = rand()%(SIGRTMAX-SIGRTMIN+1)+SIGRTMIN;
+            kill(ppid,rtsig);
+            printf("Child with pid: %i sent rt signal %i \n",pid,rtsig);
             time_t end = time(NULL);
             int time_taken = end-start;
             printf("Children with PID: %i ending. Time taken: %d\n", pid,time_taken);
