@@ -11,10 +11,11 @@ int call_counter;
 pid_t *pids;
 bool got_enough_calls_flag;
 int children_terminated;
+int usr1_sigs;
+int rt_sigs;
 
 void SIGUSR1_handler(int signo, siginfo_t* info, void* vp){
     pid_t sender = info->si_pid;
-    sleep(1);
     if(!got_enough_calls_flag){
         pids[call_counter] = sender;
         call_counter++;
@@ -22,11 +23,13 @@ void SIGUSR1_handler(int signo, siginfo_t* info, void* vp){
     else{
         kill(sender,SIGCONT);
     }
+    usr1_sigs++;
 }
 
 void SIGRT_handler(int signo, siginfo_t* info, void* vp){
     pid_t sender = info->si_pid;
     printf("Received real-time signal %i from child with pid: %i\n",signo,sender);
+    rt_sigs++;
 }
 
 void SIGCHLD_handler(int signo,siginfo_t* info, void* vp){
@@ -64,6 +67,8 @@ int main(int argc, char **argv) {
     got_enough_calls_flag = false;
     children_terminated = 0;
     call_counter = 0;
+    usr1_sigs = 0;
+    rt_sigs = 0;
 
     sigset_t sigset;
     sigemptyset(&sigset);
