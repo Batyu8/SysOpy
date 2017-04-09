@@ -111,8 +111,9 @@ int main(int argc, char **argv) {
     while(call_counter < calls)
         pause();
 
+
     got_enough_calls_flag = true;
-    printf("");
+    printf("Got enough signals\n");
 
     struct sigaction chld_sa;
     chld_sa.sa_sigaction = SIGCHLD_handler;
