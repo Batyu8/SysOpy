@@ -42,7 +42,7 @@ void SIGCHLD_handler(int signo,siginfo_t* info, void* vp){
 }
 
 void SIGCONT_handler(int signo){
-    printf("Children with pid %i unpaused\n",getpid());
+    printf("Child with pid: %i received signal SIGCONT\n",getpid());
 }
 
 
@@ -104,7 +104,7 @@ int main(int argc, char **argv) {
             time_t end = time(NULL);
             int time_taken = end-start;
             printf("Children with PID: %i ending. Time taken: %d\n", pid,time_taken);
-            exit(time_taken);
+            _exit(time_taken);
         }
     }
 
@@ -112,6 +112,7 @@ int main(int argc, char **argv) {
         pause();
 
     got_enough_calls_flag = true;
+    printf("");
 
     struct sigaction chld_sa;
     chld_sa.sa_sigaction = SIGCHLD_handler;
