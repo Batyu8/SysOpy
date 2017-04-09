@@ -14,15 +14,12 @@ int children_terminated;
 
 void SIGUSR1_handler(int signo, siginfo_t* info, void* vp){
     pid_t sender = info->si_pid;
-    printf("Received signal SIGUSR1 from child with pid: %i\n",sender);
     sleep(1);
     if(!got_enough_calls_flag){
         pids[call_counter] = sender;
         call_counter++;
-        printf("Added child with pid: %i to the list\n",sender);
     }
     else{
-        printf("Sending SIGCONT to child with pid: %i\n",sender);
         kill(sender,SIGCONT);
     }
 }
@@ -37,7 +34,7 @@ void SIGCHLD_handler(int signo,siginfo_t* info, void* vp){
     pid_t sender = info->si_pid;
     int status;
     waitpid(sender,&status,0);
-    printf("Children with pid: %i terminated with code: %i\n",sender,WEXITSTATUS(status));
+    printf("Child with pid: %i terminated with code: %i\n",sender,WEXITSTATUS(status));
     children_terminated++;
 }
 
@@ -83,6 +80,7 @@ int main(int argc, char **argv) {
     }
 
     struct sigaction cont_sa;
+
     cont_sa.sa_handler = SIGCONT_handler;
     sigaction(SIGCONT,&cont_sa,NULL);
 
