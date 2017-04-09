@@ -27,7 +27,6 @@ void SIGUSR1_handler(int signo, siginfo_t* info, void* vp){
 void SIGRT_handler(int signo, siginfo_t* info, void* vp){
     pid_t sender = info->si_pid;
     printf("Received real-time signal %i from child with pid: %i\n",signo,sender);
-
 }
 
 void SIGCHLD_handler(int signo,siginfo_t* info, void* vp){
@@ -66,25 +65,41 @@ int main(int argc, char **argv) {
     children_terminated = 0;
     call_counter = 0;
 
+    sigset_t sigset;
+    sigemptyset(&sigset);
+    sigaddset(&sigset,SIGUSR1);
+    sigaddset(&sigset,SIGCHLD);
+    sigaddset(&sigset,SIGCONT);
+    for(int i=SIGRTMIN;i<=SIGRTMAX;i++){
+        sigaddset(&sigset,i);
+    }
     struct sigaction sa;
+    sa.sa_handler = NULL;
     sa.sa_sigaction = SIGUSR1_handler;
     sa.sa_flags = SA_SIGINFO;
+    sa.sa_mask = sigset;
     sigaction(SIGUSR1,&sa,NULL);
 
-    struct sigaction rt_sa;
+    sa.sa_sigaction = NULL;
+    sa.sa_handler = SIGCONT_handler;
+    sa.sa_flags = 0;
+    sa.sa_mask = sigset;
+    sigaction(SIGCONT,&sa,NULL);
+
+    sa.sa_handler = NULL;
+    sa.sa_sigaction = SIGCHLD_handler;
+    sa.sa_flags = SA_SIGINFO;
+    sa.sa_mask = sigset;
+    sigaction(SIGCHLD,&sa,NULL);
+
+    sa.sa_handler = NULL;
     sa.sa_sigaction = SIGRT_handler;
     sa.sa_flags = SA_SIGINFO;
+    sa.sa_mask = sigset;
 
     for(int i=SIGRTMIN;i<=SIGRTMAX;i++){
-        sigaction(i,&rt_sa,NULL);
+        sigaction(i,&sa,NULL);
     }
-
-    struct sigaction cont_sa;
-
-    cont_sa.sa_handler = SIGCONT_handler;
-    sigaction(SIGCONT,&cont_sa,NULL);
-
-
     for(int i=0;i<children;i++){
 
         if(fork() == 0){
@@ -96,6 +111,7 @@ int main(int argc, char **argv) {
             pid_t ppid = getppid();
             union sigval rt;
             rt.sival_int = 0;
+            rt.sival_ptr = NULL;
             time_t start = time(NULL);
             printf("Child with pid: %i is sending signal SIGUSR1\n",pid);
             kill(ppid,SIGUSR1);
@@ -117,11 +133,6 @@ int main(int argc, char **argv) {
 
     got_enough_calls_flag = true;
     printf("Got enough signals\n");
-
-    struct sigaction chld_sa;
-    chld_sa.sa_sigaction = SIGCHLD_handler;
-    chld_sa.sa_flags = 0;
-    sigaction(SIGCHLD,&chld_sa,NULL);
 
     for(int i=0;i<call_counter;i++){
         kill(pids[i],SIGCONT);
