@@ -96,13 +96,15 @@ int main(int argc, char **argv) {
             printf("Children with pid: %i is going to sleep for: %i seconds\n",pid,sleep_time);
             sleep(sleep_time);
             pid_t ppid = getppid();
+            union sigval rt;
+            rt.sival_int = 0;
             time_t start = time(NULL);
 
             kill(ppid,SIGUSR1);
             pause();
             printf("Child eith pid: %i unpaused\n",pid);
             int rtsig = rand()%(SIGRTMAX-SIGRTMIN+1)+SIGRTMIN;
-            kill(ppid,rtsig);
+            sigqueue(ppid,rtsig,rt);
             printf("Child with pid: %i sent rt signal %i \n",pid,rtsig);
             time_t end = time(NULL);
             int time_taken = end-start;
